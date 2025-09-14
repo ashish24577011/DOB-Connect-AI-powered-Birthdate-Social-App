@@ -1,2 +1,19 @@
-# DOB-Connect-AI-powered-Birthdate-Social-App
-DOB Connect is a full-stack web application that allows users worldwide to enter their Date of Birth (DOB) and:   Connect with other users sharing the same birthday.   Discover celebrities born on the same date.   Read live news updates about those celebrities.   Get AI-powered insights like news summaries and fun personality trait
+# 🎂 DOB Connect – Streamlit App
+
+DOB Connect is an AI-powered web app where users enter their Date of Birth to:
+- 🔗 Find birthday twins across the world
+- ⭐ Discover celebrities born on the same date
+- 📰 Read the latest news about them
+- 🤖 Get AI-powered news summaries
+
+## ⚙️ Tech Stack
+- **Frontend:** Streamlit (Python)
+- **Backend:** Python functions (requests, APIs)
+- **Database:** Mock in-memory DB (extendable to MongoDB/SQL)
+- **APIs:** Wikipedia API (celebrities), NewsAPI (news), OpenAI GPT/LLaMA (optional summaries)
+
+## 🚀 How to Run
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/yourusername/dob-connect-streamlit.git
+   cd dob-connect-streamlit
