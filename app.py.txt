@@ -1,0 +1,34 @@
+import streamlit as st
+import requests
+from backend import get_matches, get_celebrities, get_news, get_ai_summary
+
+st.set_page_config(page_title="DOB Connect", page_icon="🎂", layout="centered")
+
+st.title("🎂 DOB Connect – AI Powered Birthdate Social App")
+
+# Input DOB
+dob = st.date_input("Enter your Date of Birth:")
+
+if st.button("Find Matches"):
+    st.subheader("👯 Birthday Twins")
+    users = get_matches(str(dob))
+    if users:
+        for u in users:
+            st.write(f"- {u}")
+    else:
+        st.write("No birthday twins found yet!")
+
+    st.subheader("⭐ Celebrities with your DOB")
+    celebs = get_celebrities(str(dob))
+    for c in celebs:
+        st.write(f"- {c}")
+
+    st.subheader("📰 Celebrity News")
+    news = get_news(celebs)
+    if news:
+        for n in news:
+            st.write(f"**{n['title']}** - {n['url']}")
+        st.subheader("🤖 AI Summary of News")
+        st.write(get_ai_summary(news))
+    else:
+        st.write("No recent news found.")
